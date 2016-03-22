@@ -3,7 +3,12 @@
 # the string are the same.
 # 
 def match_ends(words):
-    return
+    count = 0
+
+    for word in words:
+        if len(word) > 1 and word[0] == word[-1]:
+            count = count + 1
+    return count
 
 
 # Given a list of strings, return a list with the strings in sorted
@@ -15,7 +20,15 @@ def match_ends(words):
 # before combining them.
 # 
 def front_x(words):
-    return
+    xlist = []
+    blist = []
+
+    for word in words:
+        if word.startswith('x'):
+            xlist.append(word)
+        else:
+            blist.append(word)
+    return sorted(xlist) + (blist)
 
 
 # Given a list of non-empty tuples, return a list sorted in increasing
@@ -27,8 +40,9 @@ def front_x(words):
 # 
 # Hint: use a custom key= function to extract the last element from
 # each tuple.
+def last_num(last): return last[-1]
 def sort_last(tuples):
-    return
+    return sorted(tuples, key=last_num)
 
 
 
